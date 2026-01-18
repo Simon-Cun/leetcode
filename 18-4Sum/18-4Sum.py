@@ -1,29 +1,31 @@
-# Last updated: 1/18/2026, 12:21:57 AM
+# Last updated: 1/18/2026, 12:23:18 AM
 1class Solution:
 2    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-3        nums.sort()
-4        n = len(nums)
-5        res = []
-6        for i in range(n - 3):
-7            if i > 0 and nums[i] == nums[i - 1]:
-8                continue
-9            for j in range(i + 1, n - 2):
-10                if j > i + 1 and nums[j] == nums[j - 1]:
-11                    continue
-12
-13                l, r = j + 1, len(nums) - 1
-14                while l < r:
-15                    s = nums[i] + nums[j] + nums[l] + nums[r]
-16                    if s == target:
-17                        res.append([nums[i], nums[j], nums[l], nums[r]])
+3        n = len(nums)
+4        res = []
+5        nums.sort()
+6        print(nums)
+7
+8        for i in range(n - 2):
+9            if i > 0 and nums[i] == nums[i - 1]:
+10                continue
+11            for j in range(i + 1, n - 1):
+12                if j > i + 1 and nums[j] == nums[j - 1]:
+13                    continue
+14                l, r = j + 1,  n - 1
+15                while l < r:
+16                    s = nums[i] + nums[j] + nums[l] + nums[r]
+17                    if s < target:
 18                        l += 1
-19                        r -= 1
-20                        while l < r and nums[l] == nums[l - 1]:
-21                            l += 1
-22                        while l < r and nums[r] == nums[r + 1]:
-23                            r -= 1
-24                    elif s < target:
-25                        l += 1
-26                    else:
-27                        r -= 1
-28        return res
+19                    elif s > target:
+20                        r -= 1
+21                    else:
+22                        res.append([nums[i], nums[j], nums[l], nums[r]])
+23                        l += 1
+24                        r -= 1
+25                        while l < r and nums[l] == nums[l - 1]:
+26                            l += 1
+27                        while l < r and nums[r] == nums[r + 1]:
+28                            r -= 1
+29        return res
+30                    
