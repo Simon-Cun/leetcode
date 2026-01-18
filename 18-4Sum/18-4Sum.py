@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 12:16:19 AM
+# Last updated: 1/18/2026, 12:20:12 AM
 1class Solution:
 2    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 3        nums.sort()
