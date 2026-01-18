@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 12:23:18 AM
+# Last updated: 1/18/2026, 12:23:44 AM
 1class Solution:
 2    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
 3        n = len(nums)
@@ -6,10 +6,10 @@
 5        nums.sort()
 6        print(nums)
 7
-8        for i in range(n - 2):
+8        for i in range(n - 3):
 9            if i > 0 and nums[i] == nums[i - 1]:
 10                continue
-11            for j in range(i + 1, n - 1):
+11            for j in range(i + 1, n - 2):
 12                if j > i + 1 and nums[j] == nums[j - 1]:
 13                    continue
 14                l, r = j + 1,  n - 1
