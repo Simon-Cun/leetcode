@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 12:29:12 AM
+# Last updated: 1/18/2026, 11:00:30 AM
 1class Solution:
 2    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
 3        g = [[] for _ in range(numCourses)]
