@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 11:21:27 AM
+# Last updated: 1/19/2026, 10:42:30 AM
 1class Solution:
 2    def scheduleCourse(self, courses: List[List[int]]) -> int:
 3        courses.sort(key=lambda x : x[1])
