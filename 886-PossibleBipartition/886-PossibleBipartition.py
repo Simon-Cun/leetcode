@@ -1,4 +1,4 @@
-# Last updated: 1/18/2026, 7:56:23 PM
+# Last updated: 1/18/2026, 7:57:21 PM
 1class Solution:
 2    def possibleBipartition(self, n: int, dislikes: List[List[int]]) -> bool:
 3        g = [[] for _ in range(n + 1)]
