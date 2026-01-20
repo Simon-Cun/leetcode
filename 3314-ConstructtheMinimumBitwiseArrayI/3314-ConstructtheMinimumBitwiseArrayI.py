@@ -1,4 +1,4 @@
-# Last updated: 1/20/2026, 1:20:17 PM
+# Last updated: 1/20/2026, 1:21:44 PM
 1class Solution:
 2    def minBitwiseArray(self, nums: List[int]) -> List[int]:
 3        d = {}
