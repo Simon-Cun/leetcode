@@ -1,13 +1,15 @@
-# Last updated: 1/20/2026, 2:32:05 PM
+# Last updated: 1/20/2026, 2:38:36 PM
 1class Solution:
-2    def shuffle(self, nums: List[int], n: int) -> List[int]:
-3        res = []
-4        start = 0
-5        while len(res) != len(nums):
-6            for i in nums[start::n]:
-7                res.append(i)
-8            start += 1
-9        
-10        return res
-11
-12
+2    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+3        count = 0
+4        max_count = 0
+5
+6        for i in nums:
+7            if i == 1:
+8                count += 1
+9            else:
+10                count = 0
+11            max_count = max(max_count, count)
+12        
+13        return max_count
+14        
