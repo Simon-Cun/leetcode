@@ -1,4 +1,4 @@
-# Last updated: 1/20/2026, 6:36:51 PM
+# Last updated: 1/20/2026, 6:37:31 PM
 1class Solution:
 2    def hammingWeight(self, n: int) -> int:
 3        count = 0
