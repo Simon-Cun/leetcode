@@ -1,4 +1,4 @@
-# Last updated: 1/25/2026, 2:25:03 PM
+# Last updated: 1/25/2026, 2:25:09 PM
 1class Solution:
 2    def minimumDifference(self, nums: List[int], k: int) -> int:
 3        nums.sort()
