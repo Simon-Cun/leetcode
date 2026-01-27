@@ -1,4 +1,4 @@
-# Last updated: 1/27/2026, 10:56:49 AM
+# Last updated: 1/27/2026, 10:56:55 AM
 1class Solution:
 2    @lru_cache(None)
 3    def fib(self, n: int) -> int:
