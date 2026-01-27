@@ -1,4 +1,4 @@
-# Last updated: 1/26/2026, 5:22:52 PM
+# Last updated: 1/26/2026, 5:26:50 PM
 1class Spreadsheet:
 2
 3    def __init__(self, rows: int):
@@ -9,7 +9,7 @@
 8        self.spreadsheet[cell] = value
 9
 10    def resetCell(self, cell: str) -> None:
-11        self.spreadsheet[cell] = 0
+11        self.spreadsheet.pop(cell, None)
 12
 13    def getValue(self, formula: str) -> int:
 14        cell1, cell2 = formula[1:].split('+')
