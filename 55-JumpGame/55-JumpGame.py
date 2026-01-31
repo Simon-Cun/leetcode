@@ -1,4 +1,4 @@
-# Last updated: 1/30/2026, 4:36:05 PM
+# Last updated: 1/30/2026, 4:43:04 PM
 1class Solution:
 2    def canJump(self, nums: List[int]) -> bool:
 3        curr = 0
@@ -12,7 +12,5 @@
 11                if i < len(nums) and nums[temp] <= nums[i] + i - temp and nums[i] != 0:
 12                    temp = i
 13            curr = temp
-14            print(curr)
-15            
-16            
-17        return True
+14            
+15        return True
