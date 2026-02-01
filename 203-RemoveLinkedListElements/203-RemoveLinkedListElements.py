@@ -1,16 +1,13 @@
-# Last updated: 2/1/2026, 10:13:16 AM
+# Last updated: 2/1/2026, 10:15:24 AM
 1# Definition for singly-linked list.
 2# class ListNode:
 3#     def __init__(self, val=0, next=None):
 4#         self.val = val
 5#         self.next = next
 6class Solution:
-7    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-8        slow = head
-9        fast = head
-10        
-11        while fast and fast.next:
-12            slow = slow.next
-13            fast = fast.next.next
-14        
-15        return slow
+7    def getDecimalValue(self, head: Optional[ListNode]) -> int:
+8        res = ""
+9        while head:
+10            res += str(head.val)
+11            head = head.next
+12        return int(res, 2)
