@@ -1,4 +1,4 @@
-# Last updated: 2/1/2026, 12:32:24 PM
+# Last updated: 2/1/2026, 12:32:58 PM
 1class Solution:
 2    def generateMatrix(self, n: int) -> List[List[int]]:
 3        spiral = [[0] * n for _ in range(n)]
