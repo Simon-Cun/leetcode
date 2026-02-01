@@ -1,15 +1,4 @@
-# Last updated: 1/20/2026, 2:38:36 PM
+# Last updated: 2/1/2026, 10:40:02 AM
 1class Solution:
-2    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
-3        count = 0
-4        max_count = 0
-5
-6        for i in nums:
-7            if i == 1:
-8                count += 1
-9            else:
-10                count = 0
-11            max_count = max(max_count, count)
-12        
-13        return max_count
-14        
+2    def getConcatenation(self, nums: List[int]) -> List[int]:
+3        return nums * 2
