@@ -1,4 +1,4 @@
-# Last updated: 2/1/2026, 10:35:06 AM
+# Last updated: 2/1/2026, 12:09:18 PM
 1import math
 2class Solution:
 3    def totalMoney(self, n: int) -> int:
@@ -7,13 +7,12 @@
 6        week = 1
 7        to_add = 1
 8        for _ in range(n):
-9            print(week, to_add)
-10            res += to_add
-11            if day % 7 == 0:
-12                day = 1
-13                week += 1
-14                to_add = week
-15            else:
-16                day += 1
-17                to_add += 1
-18        return res
+9            res += to_add
+10            if day % 7 == 0:
+11                day = 1
+12                week += 1
+13                to_add = week
+14            else:
+15                day += 1
+16                to_add += 1
+17        return res
