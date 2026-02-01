@@ -1,4 +1,4 @@
-# Last updated: 2/1/2026, 12:22:17 AM
+# Last updated: 2/1/2026, 12:35:00 AM
 1# Definition for singly-linked list.
 2# class ListNode:
 3#     def __init__(self, val=0, next=None):
@@ -6,28 +6,25 @@
 5#         self.next = next
 6class Solution:
 7    def isPalindrome(self, head: Optional[ListNode]) -> bool:
-8        curr = head
-9        length = 0
-10        while curr:
-11            length += 1
-12            curr = curr.next
-13        odd = False
-14        if length % 2 != 0:
-15            odd = True
-16        length //= 2
-17        stack = []
-18        curr = head
-19        while curr:
-20            if length > 0:
-21                length -= 1
-22                stack.append(curr.val)
-23            elif odd:
-24                odd = False
-25                curr = curr.next
-26                continue
-27            elif stack and stack.pop() != curr.val:
-28                return False
-29            curr = curr.next
-30        return True
-31
-32
+8        slow = head
+9        fast = head
+10        while fast and fast.next:
+11            slow = slow.next
+12            fast = fast.next.next
+13        
+14        curr = slow
+15        half = None
+16        while curr:
+17            temp = curr.next
+18            curr.next = half
+19            half = curr
+20            curr = temp
+21        
+22        curr = head
+23        while curr and half:
+24            if curr.val != half.val:
+25                return False
+26            curr = curr.next
+27            half = half.next
+28        return True
+29
