@@ -1,4 +1,4 @@
-# Last updated: 1/31/2026, 11:36:51 PM
+# Last updated: 1/31/2026, 11:37:26 PM
 1class Solution:
 2    def minimumCost(self, nums: List[int]) -> int:
 3        min1 = float('inf')
