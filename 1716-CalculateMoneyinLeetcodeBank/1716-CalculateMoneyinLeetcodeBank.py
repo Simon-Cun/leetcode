@@ -1,4 +1,4 @@
-# Last updated: 2/1/2026, 10:34:09 AM
+# Last updated: 2/1/2026, 10:35:06 AM
 1import math
 2class Solution:
 3    def totalMoney(self, n: int) -> int:
