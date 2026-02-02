@@ -1,4 +1,4 @@
-# Last updated: 2/2/2026, 11:27:13 AM
+# Last updated: 2/2/2026, 11:27:25 AM
 1class Solution:
 2    def canReach(self, arr: List[int], start: int) -> bool:
 3        g = [[] for _ in range(len(arr))]
