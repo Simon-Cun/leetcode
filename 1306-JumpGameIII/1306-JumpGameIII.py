@@ -1,4 +1,4 @@
-# Last updated: 2/2/2026, 11:27:25 AM
+# Last updated: 2/2/2026, 11:28:03 AM
 1class Solution:
 2    def canReach(self, arr: List[int], start: int) -> bool:
 3        g = [[] for _ in range(len(arr))]
@@ -10,7 +10,7 @@
 9                g[i].append(i - n)
 10            if i + n < len(arr):
 11                g[i].append(i + n)
-12        print(g)
+12                
 13        q = deque([start])
 14        v = [-1] * len(arr)
 15        while q:
