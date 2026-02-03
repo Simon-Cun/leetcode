@@ -1,4 +1,4 @@
-# Last updated: 2/2/2026, 5:06:28 PM
+# Last updated: 2/2/2026, 5:07:18 PM
 1class Solution:
 2    def isTrionic(self, nums: List[int]) -> bool:
 3        if len(nums) < 4:
