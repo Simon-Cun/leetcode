@@ -1,15 +1,12 @@
-# Last updated: 2/3/2026, 3:04:37 PM
+# Last updated: 2/3/2026, 3:10:49 PM
 1class Solution:
-2    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
-3        l = list(text.split(' '))
-4        s = set(brokenLetters)
-5        res = 0
-6        for i in l:
-7            can_add = True
-8            for j in i:
-9                if j in s:
-10                    can_add = False
-11                    break
-12            if can_add:
-13                res += 1
-14        return res
+2    def maxFrequencyElements(self, nums: List[int]) -> int:
+3        freq_map = {}
+4        for i in nums:
+5            freq_map[i] = freq_map.get(i, 0) + 1
+6        max_freq = max(freq_map.values())
+7        res = 0
+8        for i, j in freq_map.items():
+9            if j == max_freq:
+10                res += j
+11        return res
