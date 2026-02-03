@@ -1,4 +1,4 @@
-# Last updated: 2/3/2026, 3:10:49 PM
+# Last updated: 2/3/2026, 3:12:11 PM
 1class Solution:
 2    def maxFrequencyElements(self, nums: List[int]) -> int:
 3        freq_map = {}
