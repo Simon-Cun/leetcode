@@ -1,4 +1,4 @@
-# Last updated: 2/18/2026, 9:06:13 PM
+# Last updated: 2/18/2026, 10:06:49 PM
 1class Solution:
 2    def countBinarySubstrings(self, s: str) -> int:
 3        prev = s[0]
