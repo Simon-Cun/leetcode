@@ -1,4 +1,4 @@
-# Last updated: 2/19/2026, 10:29:43 AM
+# Last updated: 2/19/2026, 10:29:50 AM
 1class Solution:
 2    def countBinarySubstrings(self, s: str) -> int:
 3        prev, count, i = 0, 0, 0
@@ -11,12 +11,7 @@
 10                res += min(prev, count)
 11                prev = count
 12                count = 1
-13                
-14            
-15            i += 1
-16        res += min(prev, count)
-17        
-18
-19
-20        return res
-21
+13            i += 1
+14        res += min(prev, count)
+15        return res
+16
