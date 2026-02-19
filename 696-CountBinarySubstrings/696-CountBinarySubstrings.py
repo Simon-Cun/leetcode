@@ -1,23 +1,22 @@
-# Last updated: 2/18/2026, 10:06:49 PM
+# Last updated: 2/19/2026, 10:29:43 AM
 1class Solution:
 2    def countBinarySubstrings(self, s: str) -> int:
-3        prev = s[0]
-4        count = 0
-5        freq = []
-6        for curr in s:
-7            if curr == prev:
+3        prev, count, i = 0, 0, 0
+4        n = len(s)
+5        res = 0
+6        while i < n:
+7            if s[i] == s[i - 1] or i == 0:
 8                count += 1
-9                prev = curr
-10            else:
-11                prev = curr
-12                freq.append(count)
-13                count = 1
-14        else:
-15            freq.append(count)
-16        res = 0
-17        for i in range(len(freq) - 1):
-18            print(i)
-19            res += min(freq[i], freq[i + 1])
-20
-21        return res
-22
+9            else:
+10                res += min(prev, count)
+11                prev = count
+12                count = 1
+13                
+14            
+15            i += 1
+16        res += min(prev, count)
+17        
+18
+19
+20        return res
+21
