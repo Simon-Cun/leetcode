@@ -1,4 +1,4 @@
-# Last updated: 2/19/2026, 10:31:17 AM
+# Last updated: 2/19/2026, 10:32:02 AM
 1class Solution:
 2    def countBinarySubstrings(self, s: str) -> int:
 3        i, prev, count, n, res = 0, 0, 0, len(s), 0
