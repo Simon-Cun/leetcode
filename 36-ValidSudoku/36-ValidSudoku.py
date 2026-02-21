@@ -1,4 +1,4 @@
-# Last updated: 2/20/2026, 4:08:26 PM
+# Last updated: 2/20/2026, 4:08:32 PM
 1class Solution:
 2    def isValidSudoku(self, board: List[List[str]]) -> bool:
 3        row, col = len(board), len(board[0])
@@ -24,15 +24,13 @@
 23
 24        for i in range(0, row, 3):
 25            for j in range(0, col, 3):
-26                print()
-27                bit_mask = 0
-28                for k in range(i, i + 3):
-29                    
-30                    for l in range(j, j + 3):
-31                        if board[k][l] == '.':
-32                            continue
-33                        elif bit_mask & (1 << int(board[k][l])):
-34                            return False
-35                        else:
-36                            bit_mask |= (1 << int(board[k][l]))
-37        return True
+26                bit_mask = 0
+27                for k in range(i, i + 3):
+28                    for l in range(j, j + 3):
+29                        if board[k][l] == '.':
+30                            continue
+31                        elif bit_mask & (1 << int(board[k][l])):
+32                            return False
+33                        else:
+34                            bit_mask |= (1 << int(board[k][l]))
+35        return True
