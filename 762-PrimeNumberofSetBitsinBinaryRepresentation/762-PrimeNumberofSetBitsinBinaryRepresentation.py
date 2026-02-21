@@ -1,4 +1,4 @@
-# Last updated: 2/20/2026, 5:19:12 PM
+# Last updated: 2/20/2026, 5:19:29 PM
 1class Solution:
 2    def countPrimeSetBits(self, left: int, right: int) -> int:
 3        primes = {2,3,5,7,11,13,17,19}
