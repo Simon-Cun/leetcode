@@ -1,4 +1,4 @@
-# Last updated: 2/23/2026, 4:00:06 PM
+# Last updated: 2/23/2026, 4:06:41 PM
 1class Solution:
 2    def containsPattern(self, arr: List[int], m: int, k: int) -> bool:
 3        n = len(arr)
