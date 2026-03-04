@@ -1,4 +1,4 @@
-# Last updated: 3/3/2026, 2:51:09 PM
+# Last updated: 3/3/2026, 6:43:23 PM
 1class Solution:
 2    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
 3        dp = [[[0]*(n+1) for _ in range(m+1)] for _ in range(len(strs)+1)]
