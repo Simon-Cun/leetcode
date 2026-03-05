@@ -1,4 +1,4 @@
-# Last updated: 3/4/2026, 9:21:29 AM
+# Last updated: 3/5/2026, 2:59:14 PM
 1class Solution:
 2    def lengthOfLIS(self, nums: List[int]) -> int:
 3        n = len(nums)
