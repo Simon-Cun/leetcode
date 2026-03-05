@@ -1,4 +1,4 @@
-# Last updated: 3/5/2026, 2:40:04 PM
+# Last updated: 3/5/2026, 2:42:19 PM
 1class Solution:
 2    def longestPalindrome(self, s: str) -> str:
 3        n = len(s)
@@ -20,5 +20,4 @@
 19                if dp[i][j] == True:
 20                    if len(res) < len(s[i:j + 1]):
 21                        res = s[i:j + 1]
-22
-23        return res
+22        return res
