@@ -1,4 +1,4 @@
-# Last updated: 3/5/2026, 2:39:44 PM
+# Last updated: 3/5/2026, 2:40:04 PM
 1class Solution:
 2    def longestPalindrome(self, s: str) -> str:
 3        n = len(s)
