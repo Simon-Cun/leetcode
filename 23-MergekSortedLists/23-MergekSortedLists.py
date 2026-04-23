@@ -1,4 +1,4 @@
-# Last updated: 2/20/2026, 4:58:42 PM
+# Last updated: 4/23/2026, 3:42:26 PM
 1# Definition for singly-linked list.
 2# class ListNode:
 3#     def __init__(self, val=0, next=None):
@@ -6,16 +6,21 @@
 5#         self.next = next
 6class Solution:
 7    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-8        res = []
-9        for i in lists:
-10            curr = i
-11            while curr:
-12                res.append(curr.val)
-13                curr = curr.next
-14        res.sort(reverse=True)
-15        head = None
-16        for i in res:
-17            to_push = ListNode(i)
-18            to_push.next = head
-19            head = to_push
-20        return head
+8        pq = []
+9        count = 0
+10        for i in lists:
+11            if i:
+12                heapq.heappush(pq, (i.val, count, i))
+13                count += 1
+14        if not pq: return None
+15        head = heapq.heappop(pq)[2]
+16        if head.next: heapq.heappush(pq, (head.next.val, count, head.next))
+17        count += 1
+18        tail = head
+19        while pq:
+20            tail.next = heapq.heappop(pq)[2]
+21            tail = tail.next
+22            if tail.next: heapq.heappush(pq, (tail.next.val, count, tail.next))
+23            count += 1
+24        tail.next = None
+25        return head
