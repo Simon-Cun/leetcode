@@ -1,7 +1,7 @@
-# Last updated: 4/24/2026, 4:51:40 PM
+# Last updated: 4/24/2026, 4:52:11 PM
 1class Solution:
 2    def convert(self, s: str, numRows: int) -> str:
-3        if numRows == 1 or len(s) < numRows: return s
+3        if numRows == 1 or len(s) <= numRows: return s
 4        rows = [""] * numRows
 5        idx = 0
 6        count = 0
