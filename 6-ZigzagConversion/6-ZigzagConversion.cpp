@@ -1,4 +1,4 @@
-// Last updated: 4/25/2026, 8:20:25 PM
+// Last updated: 4/25/2026, 8:20:40 PM
 1class Solution {
 2public:
 3    string convert(string s, int numRows) {
@@ -8,14 +8,12 @@
 7        bool down = false;
 8        for (auto& i : s) {
 9            rows.at(rowIdx) += i;
-10            if (rowIdx == 0 or rowIdx == (numRows - 1)) {
-11                down = not down;
-12            }
-13            rowIdx += down ? 1 : -1;
-14        }
-15        string ret;
-16        for (auto& i : rows) ret += i;
-17
-18        return ret;
-19    }
-20};
+10            if (rowIdx == 0 or rowIdx == (numRows - 1)) down = not down;
+11            rowIdx += down ? 1 : -1;
+12        }
+13        string ret;
+14        for (auto& i : rows) ret += i;
+15
+16        return ret;
+17    }
+18};
