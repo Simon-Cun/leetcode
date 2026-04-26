@@ -1,4 +1,4 @@
-// Last updated: 4/25/2026, 6:57:56 PM
+// Last updated: 4/25/2026, 6:59:39 PM
 1class Solution {
 2public:
 3    string convert(string s, int numRows) {
@@ -13,7 +13,7 @@
 12            }
 13            rowIdx += down ? 1 : -1;
 14        }
-15        string ret = "";
+15        string ret;
 16        for (auto& i : rows) ret += i;
 17
 18        return ret;
