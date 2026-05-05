@@ -1,4 +1,4 @@
-# Last updated: 5/4/2026, 11:24:38 PM
+# Last updated: 5/4/2026, 11:25:04 PM
 1class Solution:
 2    def maximalSquare(self, matrix: List[List[str]]) -> int:
 3        dp = [[0] * len(matrix[0]) for _ in range(len(matrix))]
@@ -8,12 +8,11 @@
 7
 8        for i in range(1, len(matrix)):
 9            for j in range(1, len(matrix[0])):
-10                if matrix[i][j] == '1':
-11                    dp[i][j] = min(int(dp[i - 1][j]), int(dp[i][j - 1]), int(dp[i - 1][j - 1])) + 1 # recurrence
-12        print(dp)
-13        # getting the result
-14        ret = 0
-15        for i in dp:
-16            ret = max(ret, max(i))
-17        return ret * ret
-18        
+10                if matrix[i][j] == '1': # recurrence
+11                    dp[i][j] = min(int(dp[i - 1][j]), int(dp[i][j - 1]), int(dp[i - 1][j - 1])) + 1
+12        # getting the result
+13        ret = 0
+14        for i in dp:
+15            ret = max(ret, max(i))
+16        return ret * ret
+17        
