@@ -1,4 +1,4 @@
-// Last updated: 5/11/2026, 6:53:40 PM
+// Last updated: 5/11/2026, 6:54:43 PM
 1class Solution {
 2public:
 3    int minimumEffort(vector<vector<int>>& tasks) {
