@@ -1,4 +1,4 @@
-// Last updated: 5/17/2026, 8:59:58 AM
+// Last updated: 5/17/2026, 9:00:49 AM
 1class Solution {
 2public:
 3    bool canReach(vector<int>& arr, int start) {
