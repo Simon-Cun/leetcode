@@ -1,4 +1,4 @@
-// Last updated: 5/18/2026, 4:07:12 PM
+// Last updated: 5/18/2026, 4:07:16 PM
 1class Solution {
 2    bool helper(vector<int>& arr, int idx, vector<bool>& visited) {
 3        if (idx < 0 || idx >= arr.size()) return false;
