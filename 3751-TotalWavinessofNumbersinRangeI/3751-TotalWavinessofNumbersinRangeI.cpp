@@ -1,4 +1,4 @@
-// Last updated: 6/5/2026, 1:06:04 PM
+// Last updated: 6/5/2026, 1:06:10 PM
 1class Solution {
 2public:
 3    int waviness(int num) {
