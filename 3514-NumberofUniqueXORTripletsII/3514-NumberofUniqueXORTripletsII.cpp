@@ -1,18 +1,11 @@
-// Last updated: 7/24/2026, 2:06:42 PM
-1#include <algorithm>
-2#include <vector>
-3class Solution {
-4public:
-5    int gcd(int a, int b) {
-6        while (a % b != 0) {
-7            int r = a % b;
-8            a = b;
-9            b = r;
-10        }
-11        return b;
-12    }
-13    int findGCD(vector<int>& nums) {
-14        int small = *min_element(nums.begin(), nums.end()), large = *max_element(nums.begin(), nums.end());
-15        return gcd(large, small);
-16    }
-17};
+// Last updated: 7/24/2026, 2:09:42 PM
+1class Solution {
+2public:
+3    int uniqueXorTriplets(vector<int>& nums) {
+4        int n = nums.size();
+5        if (n < 3) return n;
+6        int ret = 1;
+7        while (n >= pow(2, ret)) ++ret;
+8        return 1 << ret;
+9    }
+10};
