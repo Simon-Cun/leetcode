@@ -1,4 +1,4 @@
-// Last updated: 7/25/2026, 8:22:33 PM
+// Last updated: 7/25/2026, 8:22:39 PM
 1class Solution {
 2public:
 3    int maxProduct(int n) {
