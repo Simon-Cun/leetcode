@@ -1,4 +1,4 @@
-// Last updated: 7/26/2026, 10:28:35 AM
+// Last updated: 7/26/2026, 10:29:04 AM
 1class Solution {
 2public:
 3    int trap(vector<int>& height) {
