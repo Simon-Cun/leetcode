@@ -1,13 +1,9 @@
-// Last updated: 7/28/2026, 11:27:43 PM
+// Last updated: 7/31/2026, 8:05:03 AM
 1class Solution {
 2public:
 3    int removeDuplicates(vector<int>& nums) {
 4        int k = 1;
-5        for (int i = k; i < nums.size(); ++i) {
-6            if (nums.at(i) != nums.at(i - 1)) {
-7                nums.at(k++) = nums.at(i);
-8            }
-9        }
-10        return k;
-11    }
-12};
+5        for (int i = 1; i < nums.size(); ++i) if (nums.at(i - 1) != nums.at(i)) nums.at(k++) = nums.at(i);
+6        return k;
+7    }
+8};
