@@ -1,4 +1,4 @@
-// Last updated: 9/8/2026, 12:26:44 PM
+// Last updated: 9/8/2026, 12:38:49 PM
 1class Solution {
 2public:
 3    vector<int> backtrack(int n, int m, unordered_set<int>& visited, vector<int>& ret) {
@@ -24,12 +24,13 @@
 23            }
 24            bitmask *= 2;
 25        }
-26        return res;
-27    }
-28    vector<int> grayCode(int n) {
-29        vector<int> ret;
-30        unordered_set<int> v;
-31        v.insert(0);
-32        return backtrack(n, 0, v, ret);
-33    }
-34};
+26        ret.pop_back();
+27        return res;
+28    }
+29    vector<int> grayCode(int n) {
+30        vector<int> ret;
+31        unordered_set<int> v;
+32        v.insert(0);
+33        return backtrack(n, 0, v, ret);
+34    }
+35};
