@@ -1,4 +1,4 @@
-// Last updated: 7/26/2026, 10:07:16 AM
+// Last updated: 9/11/2026, 4:26:31 PM
 1/**
 2 * Definition for singly-linked list.
 3 * struct ListNode {
@@ -12,17 +12,21 @@
 11class Solution {
 12public:
 13    ListNode* deleteDuplicates(ListNode* head) {
-14        if (!head) return head;
-15        ListNode* curr = head;
-16        while (curr->next) {
-17            if (curr->val == curr->next->val) {
-18                ListNode* tmp = curr->next;
-19                curr->next = curr->next->next;
-20                delete tmp;
-21            } else {
-22                curr = curr->next;
-23            }
-24        }
-25        return head;
-26    }
-27};
+14        if (!head) return nullptr;
+15        ListNode* prev = head;
+16        ListNode* curr = head->next;
+17        while (curr) {
+18            if (prev->val == curr->val) {
+19                cout << curr->val << endl;
+20                prev->next = curr->next;
+21                delete curr;
+22                curr = prev->next;
+23            } else {
+24                prev = curr;
+25                curr = curr->next;
+26            }
+27            
+28        }
+29        return head;
+30    }
+31};
