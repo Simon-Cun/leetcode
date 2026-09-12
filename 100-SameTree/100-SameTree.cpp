@@ -1,4 +1,4 @@
-// Last updated: 9/11/2026, 5:47:43 PM
+// Last updated: 9/11/2026, 5:48:35 PM
 1/**
 2 * Definition for a binary tree node.
 3 * struct TreeNode {
@@ -14,9 +14,7 @@
 13public:
 14    bool isSameTree(TreeNode* p, TreeNode* q) {
 15        if (!p && !q) return true;
-16        if (p && q && p->val != q->val) return false;
-17        if (!p && q) return false;
-18        if (p && !q) return false;
-19        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
-20    }
-21};
+16        if (!p || !q || p->val != q->val) return false;
+17        return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
+18    }
+19};
