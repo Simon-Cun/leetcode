@@ -1,42 +1,38 @@
-// Last updated: 4/21/2026, 1:04:40 PM
+// Last updated: 9/11/2026, 6:41:24 PM
 1class MedianFinder {
 2public:
-3    priority_queue<int> max;    
-4    priority_queue<int, vector<int>, greater<int>> min;
+3    priority_queue<int> maxHeap;
+4    priority_queue<int, vector<int>, greater<int>> minHeap;
 5    MedianFinder() {
-6    }
-7    
-8    void addNum(int num) {
-9        max.push(num);
-10        if (!min.empty() and max.top() > min.top()) {
-11            min.push(max.top());
-12            max.pop();
-13        }
-14
-15        if (max.size() > min.size() + 1) {
-16            min.push(max.top());
-17            max.pop();
-18        } else if (min.size() > max.size() + 1) {
-19            max.push(min.top());
-20            min.pop();
-21        }
-22    }
-23    
-24    double findMedian() {
-25        if (min.size() == max.size()) {
-26            return (min.top() + max.top()) / 2.0;
-27        } else if (max.size() > min.size()) {
-28            return max.top();
-29        } else {
-30            return min.top();
-31        }
-32
-33    }
-34};
-35
-36/**
-37 * Your MedianFinder object will be instantiated and called as such:
-38 * MedianFinder* obj = new MedianFinder();
-39 * obj->addNum(num);
-40 * double param_2 = obj->findMedian();
-41 */
+6        
+7    }
+8    
+9    void addNum(int num) {
+10        maxHeap.push(num);
+11        int tmp = maxHeap.top();
+12        maxHeap.pop();
+13        minHeap.push(tmp);
+14        if (maxHeap.size() - minHeap.size() == 2 || maxHeap.size() - minHeap.size() == -2) {
+15            tmp = minHeap.top();
+16            minHeap.pop();
+17            maxHeap.push(tmp);
+18        }
+19    }
+20    
+21    double findMedian() {
+22        if (maxHeap.size() == minHeap.size()) {
+23            return (maxHeap.top() + minHeap.top()) / 2.0;
+24        } else if (maxHeap.size() > minHeap.size()) {
+25            return maxHeap.top();
+26        } else {
+27            return minHeap.top();
+28        }
+29    }
+30};
+31
+32/**
+33 * Your MedianFinder object will be instantiated and called as such:
+34 * MedianFinder* obj = new MedianFinder();
+35 * obj->addNum(num);
+36 * double param_2 = obj->findMedian();
+37 */
