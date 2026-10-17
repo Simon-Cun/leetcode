@@ -1,4 +1,4 @@
-// Last updated: 10/17/2026, 4:40:27 PM
+// Last updated: 10/17/2026, 4:40:58 PM
 1class Trie {
 2    struct Node {
 3        unordered_map<char, Node*> children;
