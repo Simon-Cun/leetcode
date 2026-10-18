@@ -1,4 +1,4 @@
-// Last updated: 10/17/2026, 9:38:01 PM
+// Last updated: 10/18/2026, 3:15:54 PM
 1class Solution {
 2public:
 3    vector<vector<int>> merge(vector<vector<int>>& intervals) {
@@ -10,7 +10,7 @@
 9            vector<int> curr = pq.top();
 10            pq.pop();
 11            if (prev.at(1) >= curr.at(0)) {
-12                prev = {prev.at(0), max(prev.at(1), curr.at(1))};
+12                prev.at(1) = max(prev.at(1), curr.at(1));
 13            } else {
 14                ret.push_back(prev);
 15                prev = curr;
