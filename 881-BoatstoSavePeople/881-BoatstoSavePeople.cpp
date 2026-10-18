@@ -1,4 +1,4 @@
-// Last updated: 10/18/2026, 3:22:47 PM
+// Last updated: 10/18/2026, 3:22:49 PM
 1class Solution {
 2public:
 3    int numRescueBoats(vector<int>& people, int limit) {
