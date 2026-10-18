@@ -1,24 +1,22 @@
-// Last updated: 10/17/2026, 8:55:02 PM
+// Last updated: 10/18/2026, 2:52:07 PM
 1class Solution {
 2public:
 3    vector<int> partitionLabels(string s) {
 4        unordered_map<char, int> hash;
-5        for (int i = 0; i < s.size(); ++i) {
-6            hash[s.at(i)] = i;
-7        }
-8        int end = 0;
-9        int size = 0;
-10        vector<int> ret;
-11        for (int i = 0; i < s.size(); ++i) {
-12            ++size;
-13            if (hash[s.at(i)] > end) {
-14                end = hash[s.at(i)];
-15            }
-16            if (i == end) {
-17                ret.push_back(size);
-18                size = 0;
-19            }
-20        }
-21        return ret;
-22    }
-23};
+5        for (int i = 0; i < s.size(); ++i) hash[s.at(i)] = i;
+6        int end = hash.at(s.at(0));
+7        int size = 0;
+8        vector<int> ret;
+9        for (int i = 0; i < s.size(); ++i) {
+10            if (end < hash[s.at(i)]) {
+11                end = hash[s.at(i)];
+12            }
+13            ++size;
+14            if (i == end) {
+15                ret.push_back(size);
+16                size = 0;
+17            }
+18        }
+19        return ret;
+20    }
+21};
