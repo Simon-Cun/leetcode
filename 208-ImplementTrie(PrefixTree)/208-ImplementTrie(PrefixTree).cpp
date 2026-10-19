@@ -1,51 +1,53 @@
-// Last updated: 10/18/2026, 1:49:14 PM
+// Last updated: 10/18/2026, 6:50:15 PM
 1class Trie {
-2    struct Node {
-3        unordered_map<char, Node*> characters;
-4        bool isEnd = false;
-5    };
-6    Node* root;
-7    Node* find(string word) {
-8        Node* curr = root;
-9        for (auto& i : word) {
-10            if (curr->characters.find(i) != curr->characters.end()) {
-11                curr = curr->characters[i];
-12            } else {
-13                return nullptr;
-14            }
-15        }
-16        return curr;
-17    }
-18public:
-19    Trie() {
-20        root = new Node();
-21    }
-22    
-23    void insert(string word) {
-24        Node* curr = root;
-25        for (auto& i : word) {
-26            if (curr->characters.find(i) == curr->characters.end()) {
-27                curr->characters[i] = new Node();
-28            }
-29            curr = curr->characters[i];
-30        }
-31        curr->isEnd = true;
-32    }
-33    
-34    bool search(string word) {
-35        Node* curr = find(word);
-36        return curr && curr->isEnd;
-37    }
-38    
-39    bool startsWith(string prefix) {
-40        return find(prefix);
-41    }
-42};
-43
-44/**
-45 * Your Trie object will be instantiated and called as such:
-46 * Trie* obj = new Trie();
-47 * obj->insert(word);
-48 * bool param_2 = obj->search(word);
-49 * bool param_3 = obj->startsWith(prefix);
-50 */
+2private:
+3    struct Node {
+4        unordered_map<char, Node*> c;
+5        bool isEnd = false;
+6    };
+7    
+8    Node* find(string word) {
+9        Node* curr = root;
+10        for (auto& i : word) {
+11            if (curr->c.find(i) != curr->c.end()) {
+12                curr = curr->c[i];
+13            } else {
+14                return nullptr;
+15            }
+16        }
+17        return curr;
+18    }
+19    Node* root;
+20public:
+21    Trie() {
+22        root = new Node();
+23    }
+24    
+25    void insert(string word) {
+26        Node* curr = root;
+27        for (auto& i : word) {
+28            if (curr->c.find(i) == curr->c.end()) {
+29                curr->c[i] = new Node();
+30            }
+31            curr = curr->c[i];
+32        }
+33        curr->isEnd = true;
+34    }
+35    
+36    bool search(string word) {
+37        Node* curr = find(word);
+38        return curr && curr->isEnd;
+39    }
+40    
+41    bool startsWith(string prefix) {
+42        return find(prefix);
+43    }
+44};
+45
+46/**
+47 * Your Trie object will be instantiated and called as such:
+48 * Trie* obj = new Trie();
+49 * obj->insert(word);
+50 * bool param_2 = obj->search(word);
+51 * bool param_3 = obj->startsWith(prefix);
+52 */
